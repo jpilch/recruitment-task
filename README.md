@@ -26,7 +26,7 @@ Accept: application/json
         "ownerLogin": "recruitment-task",
         "branches": [
             {
-                "branchName": "master",
+                "name": "master",
                 "lastCommitSha": "9d40e4b"
             }
         ]
