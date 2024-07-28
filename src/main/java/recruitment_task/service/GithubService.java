@@ -69,6 +69,7 @@ public class GithubService {
     private boolean hasNextPage(ClientResponse response) {
         List<String> linkHeader = response.headers().header("link");
 
-        return !linkHeader.isEmpty() && linkHeader.get(0).contains("rel=\"next\"");
+        return !linkHeader.isEmpty()
+            && linkHeader.stream().anyMatch(value -> value.contains("rel=\"next\""));
     }
 }

@@ -12,8 +12,8 @@ import recruitment_task.dto.ErrorResponse;
 @ControllerAdvice
 public class GlobalExceptionHandler {
     
-    @ExceptionHandler(ResourceNotFoundException.class)
-    public Mono<ResponseEntity<ErrorResponse>> handleResourceNotFoundException(ResourceNotFoundException ex) {
+    @ExceptionHandler(GithubUserNotFoundException.class)
+    public Mono<ResponseEntity<ErrorResponse>> handleResourceNotFoundException(GithubUserNotFoundException ex) {
         ErrorResponse responseBody = new ErrorResponse(HttpStatus.NOT_FOUND.value(), ex.getMessage());
 
         return Mono.just(new ResponseEntity<>(responseBody, HttpStatusCode.valueOf(404)));
